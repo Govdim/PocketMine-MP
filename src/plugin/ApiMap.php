@@ -32,6 +32,8 @@ use pocketmine\utils\Utils;
 
 /**
  * Alows different modules to expose APIs using types.
+ *
+ * @phpstan-template P the interface that all API entries have to implement
  */
 final class ApiMap{
 	/**
@@ -43,7 +45,7 @@ final class ApiMap{
 	/**
 	 * @see Server::provideApi()
 	 *
-	 * @phpstan-template T of object
+	 * @phpstan-template T of P
 	 * @phpstan-param class-string<T> $interface
 	 * @phpstan-param T $impl
 	 *
@@ -87,7 +89,7 @@ final class ApiMap{
 	/**
 	 * @see Server::getApi()
 	 *
-	 * @phpstan-template T of object
+	 * @phpstan-template T of P
 	 * @phpstan-param class-string<T> $interface
 	 *
 	 * @phpstan-return T|null

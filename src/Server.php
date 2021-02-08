@@ -184,7 +184,7 @@ class Server{
 	/** @var PluginManager */
 	private $pluginManager;
 
-	/** @var ApiMap */
+	/** @var ApiMap<GlobalApi> */
 	private $apiMap;
 
 	/** @var float */
@@ -425,7 +425,7 @@ class Server{
 	public function getPluginManager(){
 		return $this->pluginManager;
 	}
-	
+
 	/**
 	 * Returns the underlying server-scoped API map
 	 */
@@ -457,7 +457,7 @@ class Server{
 	 * The default implementation (usually provided by the module declaring the interface)
 	 * should call `provideDefaultApi` so that other plugins can override it without triggering errors.
 	 *
-	 * @phpstan-template T of object
+	 * @phpstan-template T of GlobalApi
 	 * @phpstan-param class-string<T> $interface
 	 * @phpstan-param T $impl
 	 *
@@ -466,7 +466,7 @@ class Server{
 	 *
 	 * @see Server::provideDefaultApi()
 	 */
-	public function provideApi(string $interface, Plugin $plugin, object $impl) : void{
+	public function provideApi(string $interface, Plugin $plugin, GlobalApi $impl) : void{
 		$this->apiMap->provideApi($interface, $plugin, $impl, false);
 	}
 
@@ -475,7 +475,7 @@ class Server{
 	 *
 	 * `provideDefaultApi` must only be called exactly once, by the module that declared `$interface`.
 	 *
-	 * @phpstan-template T of object
+	 * @phpstan-template T of GlobalApi
 	 * @phpstan-param class-string<T> $interface
 	 * @phpstan-param T $impl
 	 *
@@ -483,7 +483,7 @@ class Server{
 	 *
 	 * @see Server::provideApi() for detailed semantics of API provision
 	 */
-	public function provideDefaultApi(string $interface, Plugin $plugin, object $impl) : void{
+	public function provideDefaultApi(string $interface, Plugin $plugin, GlobalApi $impl) : void{
 		$this->apiMap->provideApi($interface, $plugin, $impl, true);
 	}
 
@@ -492,11 +492,11 @@ class Server{
 	 *
 	 * Callers can check whether this implementation is default by getting `$default` by reference.
 	 *
-	 * @phpstan-template T of object
+	 * @phpstan-template T of GlobalApi
 	 * @phpstan-param class-string<T> $interface
 	 * @phpstan-return T|null
 	 */
-	public function getApi(string $interface, bool &$default = false) : ?object{
+	public function getApi(string $interface, bool &$default = false) : ?GlobalApi{
 		return $this->apiMap->getApi($interface, $default);
 	}
 

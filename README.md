@@ -4,12 +4,10 @@
 </p>
 
 <p align="center">
-
-![CI](https://github.com/pmmp/PocketMine-MP/workflows/CI/badge.svg)
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/pmmp/PocketMine-MP?label=release&logo=github)](https://github.com/pmmp/PocketMine-MP/releases)
-[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/pmmp/pocketmine-mp?logo=docker&label=image)](https://hub.docker.com/r/pmmp/pocketmine-mp)
-[![Discord](https://img.shields.io/discord/373199722573201408?label=discord&color=7289DA&logo=discord)](https://discord.gg/bmSAZBG)
-
+	<img src="https://github.com/pmmp/PocketMine-MP/workflows/CI/badge.svg" alt="CI" />
+	<a href="https://github.com/pmmp/PocketMine-MP/releases"><img src="https://img.shields.io/github/v/tag/pmmp/PocketMine-MP?label=release&logo=github" alt="GitHub tag (latest semver)" /></a>
+	<a href="https://hub.docker.com/r/pmmp/pocketmine-mp"><img src="https://img.shields.io/docker/v/pmmp/pocketmine-mp?logo=docker&label=image" alt="Docker image version (latest semver)" /></a>
+	<a href="https://discord.gg/bmSAZBG"><img src="https://img.shields.io/discord/373199722573201408?label=discord&color=7289DA&logo=discord" alt="Discord" /></a>
 </p>
 
 ## Getting started

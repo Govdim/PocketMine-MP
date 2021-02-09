@@ -33,7 +33,7 @@ use pocketmine\utils\Utils;
 /**
  * Alows different modules to expose APIs using types.
  *
- * @phpstan-template P the interface that all API entries have to implement
+ * @phpstan-template P of object the interface that all API entries have to implement
  */
 final class ApiMap{
 	/**
